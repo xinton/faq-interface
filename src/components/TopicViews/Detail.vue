@@ -6,8 +6,13 @@
 </template>
 
 <script>
+import getters from '../../mixins/getters'
+
 export default {
   name: 'TopicList',
+  mixins: [
+    getters
+  ],
   props: [
     'id'
   ],
@@ -22,7 +27,7 @@ export default {
   methods: {
     getTopic: function () {
       this.$http
-        .get(`http://127.0.0.1:8000/topics/${this.$props.id}`)
+        .get(`topics/${this.$props.id}`)
         .then(response => {
           this.topic = response.data
         })

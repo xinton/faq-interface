@@ -10,28 +10,20 @@
 </template>
 
 <script>
+import getters from '../../mixins/getters'
+
 export default {
   name: 'TopicList',
+  mixins: [
+    getters
+  ],
   data () {
     return {
       topics: []
     }
   },
-  mounted: function () {
-    this.getTopics()
-  },
-  methods: {
-    getTopics: function () {
-      this.$http
-        .get('http://127.0.0.1:8000/topics/')
-        .then(response => {
-          this.topics = response.data
-        })
-        .catch(err => {
-        // TODO ERROR
-          console.log(err)
-        })
-    }
+  mounted: async function () {
+    this.topics = await this.getTopics()
   }
 }
 </script>
