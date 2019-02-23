@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # faq-interface
 
 > Interface para FAQ
@@ -19,3 +20,6 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+=======
+# faq-interface
+>>>>>>> c752ee0902cbc5fe9503404e701f516140bbcd4d
