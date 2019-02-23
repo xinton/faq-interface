@@ -1,7 +1,10 @@
 <template>
   <div class="content">
+    <router-link :to="{ name: 'topics.create' }">
+        <button> Adicionar </button>
+      </router-link>
     <div v-for="topic in topics" :key="topic.id">
-      <router-link :to="{ name: 'TopicDetail', params: { id: topic.id } }">
+      <router-link :to="{ name: 'topics.detail', params: { id: topic.id } }">
         <h1>{{ topic.title }}</h1>
       </router-link>
       <p>{{ topic.text }}</p>
