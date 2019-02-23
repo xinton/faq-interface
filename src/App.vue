@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <div class="page-header">
+      <h1><a href="/"> FAQ </a></h1>
+    </div>
     <router-view/>
   </div>
 </template>
@@ -16,8 +18,15 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: unset;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 0px;
+}
+
+.page-header {
+    background-color: rgb(54, 51, 233);
+    margin-top: 0;
+    text-align: center;
+    padding: 10px 10px 10px 40px;
 }
 </style>
