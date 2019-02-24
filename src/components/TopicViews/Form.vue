@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- TODO RULES -->
-    <form :model="topic" @submit.native.prevent>
+    <form @submit.native.prevent>
       <div>
         <label for="title">Titulo:</label>
         <input v-model="topic.title" type="text" id="title">
