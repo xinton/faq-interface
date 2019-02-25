@@ -7,7 +7,7 @@
       <router-link :to="{ name: 'topics.detail', params: { id: topic.id } }">
         <h1>{{ topic.title }}</h1>
       </router-link>
-      <p>{{ topic.text }}</p>
+      <p>{{ textPreview(topic.text) }}</p>
     </div>
   </div>
 </template>
@@ -23,6 +23,11 @@ export default {
   data () {
     return {
       topics: []
+    }
+  },
+  methods: {
+    textPreview (text) {
+      return text.slice(0, 50) + '...'
     }
   },
   mounted: async function () {

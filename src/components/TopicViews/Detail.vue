@@ -7,7 +7,6 @@
 
     <div>
       <router-link :to="{name: 'topics.edit', params: {id: topic.id} }">
-        {{topic.id}}
         <button> Editar </button>
       </router-link>
     </div>
