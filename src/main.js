@@ -5,11 +5,28 @@ import App from './App'
 import router from './router'
 import VueResource from 'vue-resource'
 
+/*
+ * Importação dos middlewares
+ */
+import logged from './router/middlewares/logged'
+import notLogged from './router/middlewares/notLogged'
+
 Vue.config.productionTip = false
 
-// Vue Resource
+/*
+ * Vue Resource
+ */
 Vue.use(VueResource)
 Vue.http.options.root = 'http://127.0.0.1:8000'
+
+/*
+ * Implementação de middlewares
+ */
+router.beforeEach((to, from, next) => {
+  const context = { to, next, router }
+  to.name === 'login' ? logged(context) : notLogged(context)
+  return next()
+})
 
 /* eslint-disable no-new */
 new Vue({

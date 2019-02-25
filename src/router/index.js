@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
+import Login from '@/components/Login'
+
 import Topic from '@/components/TopicViews/Index'
 import TopicList from '@/components/TopicViews/List'
 import TopicDetail from '@/components/TopicViews/Detail'
@@ -10,6 +13,11 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/login/',
+      name: 'login',
+      component: Login
+    },
     {
       path: '/faq/',
       name: 'faq',
