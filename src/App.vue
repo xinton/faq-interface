@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="page-header">
-      <h1><a href="/"> FAQ </a></h1>
+      <h1><a href="/#/faq"> FAQ </a></h1>
     </div>
     <router-view/>
   </div>
