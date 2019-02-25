@@ -12,7 +12,7 @@
       </div>
 
       <div>
-        <button type="submit" id="bt-save" @click.prevent="submit()">Salvar</button>
+        <button type="submit" @click.prevent="submit()">Salvar</button>
       </div>
     </form>
   </div>

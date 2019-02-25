@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <div class="centralized">
-      <form ref="form" @submit.native.prevent="login">
+      <form ref="form">
         <div>
           <label for="username">Usuario:</label>
           <input v-model="username">
@@ -30,15 +30,12 @@ export default {
   methods: {
     async login () {
       const credentials = { username: this.username, password: this.password }
-      console.log(this.username)
-
       try {
         const response = await this.$http.post('login/', credentials)
 
         localStorage.token = response.data.token
         localStorage.user = response.data.user_id
-        this.$router.push({ name: 'faq' })
-        console.log({localStorage})
+        await this.$router.push({ name: 'faq' })
       } catch (error) {
         // TODO NOTIFY
         console.log(error)

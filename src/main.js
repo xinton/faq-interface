@@ -20,6 +20,7 @@ Vue.use(VueResource)
 Vue.http.options.root = 'http://127.0.0.1:8000'
 
 /*
+ * TODO Melhorar login implemetando Vuex ou usando Meta
  * Implementação de middlewares
  */
 router.beforeEach((to, from, next) => {
