@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     async submit (value) {
-      const redirect = { name: 'topic.detail', params: value.id }
+      const redirect = { name: 'topics.detail', params: value.id }
       await this.update('topics/', redirect, value)
     }
   },

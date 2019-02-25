@@ -20,7 +20,7 @@ export default {
 
     async update (request, redirect, instance) {
       try {
-        await this.$http.put(`${request}${instance.id}`, instance)
+        await this.$http.put(`${request}${instance.id}/`, instance)
         this.$router.push(redirect)
       } catch (error) {
         console.log(error)
