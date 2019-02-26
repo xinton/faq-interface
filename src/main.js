@@ -26,7 +26,6 @@ Vue.http.options.root = 'http://127.0.0.1:8000'
 router.beforeEach((to, from, next) => {
   const context = { to, next, router }
   to.name === 'login' ? logged(context) : notLogged(context)
-  return next()
 })
 
 /* eslint-disable no-new */
