@@ -11,6 +11,10 @@ export default {
     async getTopic (id) {
       const response = await this.$http.get(`topics/${id}`)
       return response.data
+    },
+    async getHelpfulTopicAnswer (userId, topicId) {
+      const response = await this.$http.get(`helpfultopics/${userId}/${topicId}`)
+      return response.data
     }
   }
 }
