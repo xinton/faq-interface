@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VueResource from 'vue-resource'
+import BootstrapVue from 'bootstrap-vue'
 
 /*
  * Importação dos middlewares
@@ -11,13 +12,18 @@ import VueResource from 'vue-resource'
 import logged from './router/middlewares/logged'
 import notLogged from './router/middlewares/notLogged'
 
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
 Vue.config.productionTip = false
 
 /*
  * Vue Resource
  */
 Vue.use(VueResource)
-Vue.http.options.root = 'http://api-faq.herokuapp.com'
+Vue.http.options.root = 'https://api-faq.herokuapp.com'
+
+Vue.use(BootstrapVue)
 
 /*
  * TODO Melhorar login implemetando Vuex ou usando Meta

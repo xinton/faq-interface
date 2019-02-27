@@ -1,18 +1,19 @@
 <template>
-  <div>
+  <div class="form-content mx-auto">
     <!-- TODO RULES -->
     <form @submit.native.prevent>
-      <div>
+      <div class="form-group">
         <label for="title">Titulo:</label>
-        <input v-model="topic.title" type="text" id="title">
+        <input class="form-control" v-model="topic.title" type="text" id="title">
       </div>
-      <div>
+
+      <div class="form-group">
         <label for="text">Texto:</label>
-        <input v-model="topic.text" type="text" id="text">
+        <textarea class="form-control" v-model="topic.text" id="text" name="textarea" rows="10" cols="50"></textarea>
       </div>
 
       <div>
-        <button type="submit" @click.prevent="submit()">Salvar</button>
+        <button type="submit" class="btn btn-primary" @click.prevent="submit()">Salvar</button>
       </div>
     </form>
   </div>
@@ -39,3 +40,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+.form-content {
+  width: 100%
+}
+</style>

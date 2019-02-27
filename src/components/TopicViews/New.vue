@@ -1,6 +1,5 @@
 <template>
-  <div class="row">
-    <div class="header" />
+  <div>
     <div class="content">
       <topic-form :topic="topic" @submit="save"/>
     </div>

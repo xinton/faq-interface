@@ -1,9 +1,12 @@
 <template>
   <div class="content">
-    <router-link :to="{ name: 'topics.create' }">
-        <button> Adicionar </button>
+    <div>
+      <router-link :to="{ name: 'topics.create' }">
+        <button type="button" class="btn btn-primary"> Adicionar Pergunta </button>
       </router-link>
-    <div v-for="topic in topics" :key="topic.id">
+    </div>
+
+    <div class="card topic-content" v-for="topic in topics" :key="topic.id">
       <router-link :to="{ name: 'topics.detail', params: { id: topic.id } }">
         <h1>{{ topic.title }}</h1>
       </router-link>
@@ -35,3 +38,13 @@ export default {
   }
 }
 </script>
+
+<style>
+.content {
+    margin: 10px 10px 10px 10px;
+}
+
+.topic-content {
+    margin-top: 10px;
+}
+</style>

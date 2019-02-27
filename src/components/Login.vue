@@ -1,19 +1,19 @@
 <template>
   <div class="page">
     <div class="centralized">
-      <form ref="form">
-        <div>
+      <form>
+        <div class="form-group">
           <label for="username">Usuario:</label>
-          <input v-model="username">
+          <input id ="username" class="form-control" v-model="username">
         </div>
 
-        <div>
+        <div class="form-group">
           <label for="password">Senha:</label>
-          <input type="password" v-model="password">
+          <input id="password" class="form-control" type="password" v-model="password">
         </div>
 
         <div>
-          <button @click="login">Login</button>
+          <button type="submit" class="btn btn-primary" @click="login">Login</button>
         </div>
       </form>
     </div>
@@ -47,6 +47,6 @@ export default {
 <style scoped>
 .centralized {
   width: 40vh;
-  margin: 0 auto;
+  margin: 50px auto;
 }
 </style>
