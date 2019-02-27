@@ -2,7 +2,7 @@
   <div id="app">
     <div class="page-header">
       <h1><a href="/#/faq"> FAQ </a></h1>
-      <button @click="logout"> Logout </button>
+      <button type="button" class="btn btn-warning" @click="logout"> Logout </button>
     </div>
     <router-view/>
   </div>

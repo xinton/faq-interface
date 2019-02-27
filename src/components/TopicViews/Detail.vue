@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="content">
     <div class="detail-content">
       <h1>{{ topic.title }}</h1>
       <p>{{ topic.text }}</p>
@@ -7,17 +7,20 @@
 
     <div class="detail-helpful">
       <div v-if="!hasAnswered">
-        <button @click="isHelpful"> Marcar como util </button>
+        <button type="button" class="btn btn-success" @click="isHelpful"> Marcar como util </button>
       </div>
 
       <div v-else>
-        <p> Você marcou como util </p>
+        <div class="alert alert-success" role="alert">
+          Você marcou como util!
+        </div>
+        <button type="button" class="btn btn-warning" @click="notHelpful"> Desmarcar como util </button>
       </div>
     </div>
 
     <div>
       <router-link :to="{name: 'topics.edit', params: {id: topic.id} }">
-        <button> Editar </button>
+        <button type="button" class="btn btn-primary"> Editar Topico </button>
       </router-link>
     </div>
 
@@ -60,7 +63,16 @@ export default {
       let instance = {user: this.user, topic: this.topic.id, helpful: true}
       await this.$http.post('helpfultopics/', instance)
       this.hasAnswered = true
+    },
+    async notHelpful () {
+      await this.$http.delete(`helpfultopics/${this.user}/${this.topic.id}`)
+      this.hasAnswered = false
     }
   }
 }
 </script>
+<style>
+.content * {
+    padding: 5px 10px;
+}
+</style>
